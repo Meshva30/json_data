@@ -1,9 +1,17 @@
-import 'package:flutter/material.dart';
+
+import 'package:flutter/cupertino.dart';
 
 import 'data_model.dart';
 
-class DataProvider extends ChangeNotifier{
- List dataList=[];
- List<PostModel> postlist=[];
- DataProvider
+class DataProvider extends ChangeNotifier {
+  Map data = {};
+  DataModel? dataModel;
+
+  DataProvider() {
+    // convertJsonToString();
+  }
+
+  void convertToDataModel(Map data) {
+    dataModel = DataModel.fromJson(data);
+  }
 }
